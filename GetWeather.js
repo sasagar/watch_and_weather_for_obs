@@ -6,7 +6,7 @@
 
 */
 
-var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+var apiKey = "eca4caee1c0156119be456863e1fbc9b";
 
 // 天気予報データの処理
 
@@ -68,6 +68,12 @@ let localDatas = [
         lat: 33.56735024709979,
         lon: 130.36474036426256,
     },
+    {
+        cityName: "Naha",
+        displayName: "那覇",
+        lat: 26.212952485375567,
+        lon: 127.6801391081764,
+    },
 ];
 
 // スライドアニメーションのイージングの計算
@@ -104,41 +110,36 @@ localDatas.forEach((city, idx) => {
             console.log(responsedWeather);
             weatherList.innerHTML += `<div class="weather" id=${city.cityName}>
                                         <div class="text-data">
-                                            <div class="local-label">${
-                                                city.displayName
-                                            }</div>
+                                            <div class="local-label">${city.displayName
+                }</div>
                                                 <div class="weather-values">
-                                                    <div class="min-temp">${
-                                                        Math.round(
-                                                            responsedWeather
-                                                                .temp.min
-                                                        ) + "℃"
-                                                    }</div>
-                                                    <div class="max-temp">${
-                                                        Math.round(
-                                                            responsedWeather
-                                                                .temp.max
-                                                        ) + "℃"
-                                                    }</div>
+                                                    <div class="min-temp">${Math.round(
+                    responsedWeather
+                        .temp.min
+                ) + "℃"
+                }</div>
+                                                    <div class="max-temp">${Math.round(
+                    responsedWeather
+                        .temp.max
+                ) + "℃"
+                }</div>
                                                 </div>
                                         </div>
                                         <img
                                             class="weather-icon"
                                             id=${"img-" + city.cityName}
-                                            src=${
-                                                "https://openweathermap.org/img/w/" +
-                                                responsedWeather.weather[0]
-                                                    .icon +
-                                                ".png"
-                                            }
+                                            src=${"https://openweathermap.org/img/w/" +
+                responsedWeather.weather[0]
+                    .icon +
+                ".png"
+                }
                                             alt="Weather icon"
                                         />
                                     </div>`;
             // 数に応じたCSSの調整
             weatherBlock = document.getElementById(city.cityName);
-            weatherBlock.style.animation = `slideAnime ${
-                localDatas.length * 4
-            }s ease infinite`;
-            weatherBlock.style.animationDelay = 4 * idx + "s";
+            weatherBlock.style.animation = `slideAnime ${localDatas.length * 8
+                }s ease infinite`;
+            weatherBlock.style.animationDelay = 8 * idx + "s";
         });
 });

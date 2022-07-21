@@ -2,6 +2,7 @@
     font-family: "Noto Sans JP", sans-serif;
     color: #2c2b2b;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -9,15 +10,16 @@ body {
     min-height: 200px;
     background-color: #ffffff;
 }
+
 .container {
     display: flex;
     border-radius: 1vh;
     box-sizing: border-box;
     outline: none;
-    background: linear-gradient(25deg, rgb(254, 246, 208), #fddbf8);
+    /* background: linear-gradient(25deg, rgb(254, 246, 208), #fddbf8);
     box-shadow: 4px 4px 10px rgba(51, 51, 51, 0.5),
         inset 4px 4px 10px rgba(51, 51, 51, 0.5),
-        inset -4px -4px 10px rgba(255, 255, 255, 1);
+        inset -4px -4px 10px rgba(255, 255, 255, 1); */
 }
 
 #watch {
@@ -29,7 +31,7 @@ body {
     color: #343434;
 }
 
-#watch > div {
+#watch>div {
     position: relative;
     margin: auto;
     width: 60px;
@@ -45,10 +47,12 @@ body {
     color: #343434;
     animation: blinking 1s steps(1) infinite;
 }
+
 @keyframes blinking {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0;
     }
@@ -68,7 +72,7 @@ body {
 #weather-list {
     position: relative;
     overflow: hidden;
-    width: 200px;
+    width: 170px;
     height: 70px;
     margin: auto;
 }
@@ -100,8 +104,9 @@ body {
 
 .weather-values div:nth-child(1)::after {
     content: "/";
-    position: absolute;
+    /* position: absolute; */
     color: #343434;
+    margin-left: 5px;
 }
 
 .min-temp {
@@ -119,32 +124,3 @@ body {
     transform: scale(110%);
     transform-origin: 50% 50%;
 }
-
-/* 以下のコードは都市の数で動的に変化するのでjsで管理 */
-/* .weather:nth-of-type(1) {
-    animation-delay: 0s;
-}
-.weather:nth-of-type(2) {
-    animation-delay: 4s;
-}
-.weather:nth-of-type(3) {
-    animation-delay: 8s;
-} */
-
-/* @keyframes slideAnime {
-    0% {
-        top: -100%;
-    }
-    4% {
-        top: 0;
-    }
-    29% {
-        top: 0;
-    }
-    33% {
-        top: 100%;
-    }
-    100% {
-        top: 100%;
-    }
-} */
